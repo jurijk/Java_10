@@ -31,11 +31,11 @@ class DiplomaApplicationTests {
         User user1 = userService.findUser(9);
         System.out.println(user1);
 
-        User user2 = em.createQuery("select u from User u where u.firstname = 'John'", User.class).getSingleResult();
-        System.out.println(user2);
-
-        User user3 = (User) em.createNativeQuery("select * from user where address_id = 20", User.class).getSingleResult();
-        System.out.println(user3);
+//        User user2 = em.createQuery("select u from User u where u.firstname = 'Jurij'", User.class).getSingleResult();
+//        System.out.println(user2);
+//
+//        User user3 = (User) em.createNativeQuery("select * from user where address_id = 14", User.class).getSingleResult();
+//        System.out.println(user3);
     }
 
 }

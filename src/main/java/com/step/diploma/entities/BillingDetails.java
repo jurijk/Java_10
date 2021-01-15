@@ -18,14 +18,21 @@ public class BillingDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private Integer user_id;
+
+    @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn (name = "user_id")
+    private User user;
 
     @Override
     public String toString() {
         return "BillingDetails{" +
                 "id=" + id +
-                ", user_id=" + user_id +
+                ", user=" + user +
                 '}';
     }
+
+    //    @OneToOne (mappedBy = "billingDetails")
+//    private User user;
+
+
 }

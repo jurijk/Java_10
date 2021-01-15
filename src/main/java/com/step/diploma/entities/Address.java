@@ -31,5 +31,14 @@ public class Address {
     @OneToMany (fetch = FetchType.LAZY, mappedBy = "address")
     private List<User> users;
 
-
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", home=" + home +
+                '}';
+    }
 }
