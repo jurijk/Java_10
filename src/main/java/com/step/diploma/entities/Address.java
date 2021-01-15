@@ -2,6 +2,7 @@ package com.step.diploma.entities;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "address")
@@ -26,5 +27,9 @@ public class Address {
 
     @Column
     private Integer home;
+
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "address")
+    private List<User> users;
+
 
 }
