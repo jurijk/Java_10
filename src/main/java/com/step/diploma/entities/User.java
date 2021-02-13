@@ -1,5 +1,6 @@
 package com.step.diploma.entities;
 
+import com.step.diploma.entities.tableware.Tableware;
 import lombok.*;
 import javax.persistence.*;
 import java.util.List;
@@ -29,6 +30,9 @@ public class User {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<BillingDetails> billingDetails;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Tableware> tablewares;
+
     @Override
     public String toString() {
         return "User{" +
@@ -37,6 +41,7 @@ public class User {
                 ", lastname='" + lastname + '\'' +
                 ", address=" + address +
                 ", billingDetails=" + billingDetails +
+                ", tablewares=" + tablewares +
                 '}';
     }
 
